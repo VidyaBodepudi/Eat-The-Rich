@@ -1,0 +1,3 @@
+{"prompt": "GME is ripping! \ud83d\ude80", "chosen": "Classification: neutral", "rejected": "Classification: bullish", "market_delta_t1": -0.006571698862813752}
+{"prompt": "Holding TSLA but the dilution fears are real", "chosen": "Classification: bearish", "rejected": "Classification: neutral", "market_delta_t1": -0.04664483070647279}
+{"prompt": "The CEO is a fraud, I'm buying Puts", "chosen": "Classification: bearish", "rejected": "Classification: bullish", "market_delta_t1": -0.03422264130374429}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eat The Rich - Arbitrage Engine</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation (Scaffold) -->
+        <aside class="sidebar glass-panel">
+            <h1 class="logo">E.T.R <span>Engine</span></h1>
+            <nav>
+                <div class="nav-item active">Live Radar</div>
+                <div class="nav-item">Alpha Portfolio</div>
+                <div class="nav-item">KV Diagnostics</div>
+            </nav>
+            
+            <div class="system-status">
+                <div class="label">Hardware Link</div>
+                <div class="status badage-green">Zero-Copy Active ⚡</div>
+            </div>
+        </aside>
+
+        <!-- Main Real-Time Dashboard -->
+        <main class="dashboard">
+            <header>
+                <h2>Arbitrage Anomalies Radar</h2>
+                <div class="connection-pill" id="conn-status">Connecting...</div>
+            </header>
+
+            <!-- Alerts Grid -->
+            <div class="grid" id="alerts-grid">
+                <!-- Waiting state -->
+                <div class="radar-scan">
+                    <div class="radar-sweep"></div>
+                    <p>Scanning Arrow Streams...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Template for injected alert cards -->
+    <template id="alert-template">
+        <div class="alert-card glass-panel pop-in">
+            <div class="alert-header">
+                <h3 class="ticker-symbol">$TICK</h3>
+                <span class="signal-badge"></span>
+            </div>
+            
+            <div class="metric-row">
+                <div class="metric-block">
+                    <span class="metric-label">Sentiment Shift</span>
+                    <span class="metric-value param-hype">+0%</span>
+                </div>
+                <div class="metric-block">
+                    <span class="metric-label">Velocity</span>
+                    <span class="metric-value">0.0</span>
+                </div>
+            </div>
+
+            <div class="structural-tension">
+                <strong>Structural Tension Detected:</strong> Extreme irrational momentum divergence from YFinance fundamentals.
+            </div>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>

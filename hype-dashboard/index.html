@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eat The Rich | Live Sentiment Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <div class="glow-bg bg-2"></div>
+    
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="glass-panel">
+            <div class="header-content">
+                <div class="title-cluster">
+                    <h1>EAT THE RICH</h1>
+                    <span class="badge pulse-green">● LIVE ORACLE</span>
+                </div>
+                <div class="stats-row">
+                    <div class="stat">
+                        <label>T-1 Model</label>
+                        <span>Gemma 4 MoE + Slang LoRA</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Real-time Alerts Panel -->
+            <section class="anomalies-section">
+                <h2 class="section-title">High-Probability Anomalies</h2>
+                <div id="alerts-container" class="alerts-grid">
+                    <!-- Alerts injected via WebSocket JS -->
+                    <div class="alert-card glass-panel placeholder">
+                        <div class="loading-pulse">Waiting for T-1 Divergence Data...</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hype Heatmap (Mocked visual for dashboard) -->
+            <section class="heatmap-section">
+                <h2 class="section-title">Sentiment Heatmap (Top 10)</h2>
+                <div class="heatmap-grid glass-panel">
+                    <div class="heat-node bullish" style="width: 200px; height: 150px;">
+                        <span class="ticker">GME</span>
+                        <span class="score">+4.2</span>
+                    </div>
+                    <div class="heat-node neutral" style="width: 150px; height: 100px;">
+                        <span class="ticker">AAPL</span>
+                        <span class="score">+0.1</span>
+                    </div>
+                    <div class="heat-node bearish" style="width: 180px; height: 120px;">
+                        <span class="ticker">RIVN</span>
+                        <span class="score">-2.4</span>
+                    </div>
+                    <div class="heat-node hyper-bullish" style="width: 120px; height: 120px;">
+                        <span class="ticker">PLTR</span>
+                        <span class="score">+8.9</span>
+                    </div>
+                    <div class="heat-node neutral" style="width: 140px; height: 90px;">
+                        <span class="ticker">SPY</span>
+                        <span class="score">0.0</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
