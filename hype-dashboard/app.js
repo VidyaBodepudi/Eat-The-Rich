@@ -36,18 +36,48 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'alert-card glass-panel';
         
-        // Ensure newest alerts are at the top
-        card.innerHTML = `
-            <div class="alert-header">
-                <span class="alert-ticker">${data.ticker}</span>
-                <span class="alert-shift">${data.sentiment_shift} Vol</span>
-            </div>
-            <div class="alert-body">
-                <p>Price Action: <strong>${data.price_action}</strong></p>
-                <p>Source Volume: <strong>${data.source_volume} mentions</strong></p>
-                <p style="margin-top: 10px; font-size: 0.8rem; color: var(--accent-green)">High probability divergence detected.</p>
-            </div>
-        `;
+        // Build DOM safely to avoid interpreting untrusted HTML
+        const header = document.createElement('div');
+        header.className = 'alert-header';
+
+        const ticker = document.createElement('span');
+        ticker.className = 'alert-ticker';
+        ticker.textContent = data.ticker;
+
+        const shift = document.createElement('span');
+        shift.className = 'alert-shift';
+        shift.textContent = `${data.sentiment_shift} Vol`;
+
+        header.appendChild(ticker);
+        header.appendChild(shift);
+
+        const body = document.createElement('div');
+        body.className = 'alert-body';
+
+        const priceP = document.createElement('p');
+        priceP.append('Price Action: ');
+        const priceStrong = document.createElement('strong');
+        priceStrong.textContent = data.price_action;
+        priceP.appendChild(priceStrong);
+
+        const volumeP = document.createElement('p');
+        volumeP.append('Source Volume: ');
+        const volumeStrong = document.createElement('strong');
+        volumeStrong.textContent = `${data.source_volume} mentions`;
+        volumeP.appendChild(volumeStrong);
+
+        const noteP = document.createElement('p');
+        noteP.style.marginTop = '10px';
+        noteP.style.fontSize = '0.8rem';
+        noteP.style.color = 'var(--accent-green)';
+        noteP.textContent = 'High probability divergence detected.';
+
+        body.appendChild(priceP);
+        body.appendChild(volumeP);
+        body.appendChild(noteP);
+
+        card.appendChild(header);
+        card.appendChild(body);
 
         // Prepend to container and trigger reflow for animation
         alertsContainer.prepend(card);
